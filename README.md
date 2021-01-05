@@ -17,9 +17,12 @@
 ### Hint
 - To get input value from input field you can do something like:
 
+
 ```sh
 HTML: <input type="text" id="myInput" placeholder="Title..." />
+
 In JS File :
+
  let li = document.createElement("li");
  let inputValue = document.getElementById("myInput").value;
  let textValue = document.createTextNode(inputValue);
