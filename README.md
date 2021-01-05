@@ -14,10 +14,11 @@
 ### Sample example
 - The below example is just to give an idea, you can use your own styling
 
+![appimage](https://user-images.githubusercontent.com/7606310/103648681-e8be2a00-4f65-11eb-998f-b6232f4ac238.png)
+
 ### Hint
 - To get input value from input field you can do something like:
 
-![appimage](https://user-images.githubusercontent.com/7606310/103648681-e8be2a00-4f65-11eb-998f-b6232f4ac238.png)
 
 ```sh
 HTML: <input type="text" id="myInput" placeholder="Title..." />
