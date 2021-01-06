@@ -7,7 +7,18 @@
   </head>
 
   <body>
-    <div class="header">Hello</div>
-    <script src="src/index.js"></script>
+    <div class="topNav__heading">
+      <h1>Task Manager</h1>
+    </div>
+    <div class="container">
+      <input id="input__class" type="text" maxlength="20" placeholder="TITLE">   
+      <div class="inputToAdd__description">
+        <input id="input__addDescription" type="text" maxlength="50" placeholder="Add Short Description"> 
+        <button onclick="AddTaskToDisplay()" class="add__input">Add</button>
+      </div>
+      <div class="tasks__toDo"></div>
+        <ul class="tasks__display"></ul>
+    </div>
+    <script src="js/index.js"></script>
   </body>
 </html>
