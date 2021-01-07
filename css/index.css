@@ -58,6 +58,8 @@ li {
   justify-content: center;
 }
 li[class^="class"] {
+  display: flex;
+  flex-direction: column;
   border: 2px solid red;
   border-radius: 10px;
   width: 250px;
@@ -65,7 +67,7 @@ li[class^="class"] {
   margin: 30px;
 }
 li[class^="class"] h1 {
-  padding-top: 30px;
+  padding-top: 10px;
   width: 80%;
   margin: auto;
   color: red;
@@ -80,7 +82,10 @@ li[class^="class"] p {
 li[class^="class"] button {
   padding: 8px 5px;
   border-radius: 8px;
-  margin: 10px;
-  bottom: 0;
-  top: 20px;
+  width: 50%;
+  margin: auto;
+}
+.removedElement {
+  background-color: grey;
+  opacity: 0.5;
 }
