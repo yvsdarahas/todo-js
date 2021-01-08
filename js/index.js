@@ -1,7 +1,6 @@
 const inputTitle = document.querySelector("#input__class");
 const inputaddDescription = document.querySelector("#input__addDescription");
-const unorderedList = document.querySelector(".tasks__display");
-const tasksToDo = document.querySelector(".container");
+const tasksToDo = document.querySelector(".tasks__display");
 const arrayOfTasks = [];
 function AddTaskToDisplay() {
     if (inputTitle.value === "" || inputaddDescription.value === "") {
@@ -40,21 +39,22 @@ function AddTaskToDisplay() {
         listElement.appendChild(descriptionOfTask);
         listElement.appendChild(buttonDone);
         listElement.appendChild(buttonDelete);
-        unorderedList.append(listElement);
+        tasksToDo.append(listElement);
 
-        //Clear Inputs title and description in Browser
+        //Clear Input title and description in Browser
         inputTitle.value = "";
         inputaddDescription.value = "";   
     }       
 }
 
 //Add Event Listener to the Tasks created
-unorderedList.addEventListener('click', AddOrRemoveTask, false);
+tasksToDo.addEventListener('click', AddOrRemoveTask, false);
 
 function AddOrRemoveTask(task) {
     let clickedClass = task.target.className;
     let matchDelete = task.target.id.search("buttonDelete__");
     let matchDone = task.target.className.search("buttonDone__");
+    //To Delete the Task
     if (!clickedClass&& matchDelete >= 0) {
         let deleteTask = task.target.id;
         let deleteTaskID = 0;
@@ -64,29 +64,28 @@ function AddOrRemoveTask(task) {
         else if (deleteTask.length === 21) {
             deleteTaskID = deleteTask.slice(-2);
         }
-        let removeElementLen = document.getElementsByClassName(arrayOfTasks[deleteTaskID].className);
-        if (removeElementLen.length > 0) {
-            removeElementLen[0].remove();
+        let deleteElementLen = document.getElementsByClassName(arrayOfTasks[deleteTaskID].className);
+        if (deleteElementLen.length > 0) {
+            deleteElementLen[0].remove();
         }
     }
+    //To Add or Remove the task
     else if (clickedClass && matchDone >= 0) {
-        let deleteTaskID = "";
+        let removedTaskClass = "";
         if (clickedClass.length === 18) {
-            deleteTaskID = clickedClass.slice(-6);
+            removedTaskClass = clickedClass.slice(-6);
         }
         else if (clickedClass.length === 19) {
-            deleteTaskID = clickedClass.slice(-7);
+            removedTaskClass = clickedClass.slice(-7);
         }
-        let removeElement = document.getElementsByClassName(deleteTaskID);
+        let removeElement = document.getElementsByClassName(removedTaskClass);
         removeElement[0].classList.toggle("removedElement");
     }
 }
 
 //Event to Clear all tasks from the display
 function ClearAll() {
-    while (unorderedList.firstChild) {
-    unorderedList.removeChild(unorderedList.lastChild);
+    while (tasksToDo.firstChild) {
+    tasksToDo.removeChild(tasksToDo.lastChild);
     }
 }
-
-
