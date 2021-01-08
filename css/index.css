@@ -5,87 +5,206 @@
 body {
   width: 100%;
 }
-.topNav__heading {
+img {
+  position: absolute;
   width: 100%;
-  height: 100px;
-  color: white;
-  font-size: large;
-  background-color: black;
-  text-align: center;
+  height: 373px;
+  opacity: 0.3;
 }
-.topNav__heading h1 {
-  padding-top: 30px;
+.top__head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 .container {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
+  color: aliceblue;
+  z-index: 1;
+}
+.main__heading {
+  width: 100%;
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 80px;
 }
 li {
   list-style: none;
 }
 #input__class {
   width: 30%;
-  height: 25px;
+  height: 22px;
   font-size: 22px;
+  padding: 8px;
   text-align: center;
-  padding: 10px;
-  border-radius: 8px;
+  z-index: 1;
 }
 .inputToAdd__description {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  margin-bottom: 70px;
 }
 #input__addDescription {
-  width: 50%;
-  height: 20px;
+  width: 70%;
   font-size: 25px;
+  padding: 10px;
   text-align: center;
-  padding: 5px;
-  border-radius: 8px;
+  z-index: 1;
+  border: none;
+  background-color: #ffffff;
 }
-.add__input {
-  width: 50px;
-  height: 33px;
-  font-size: 18px;
-  margin-left: 20px;
-  border-radius: 8px;
+.addinput__button {
+  font-size: 22px;
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  color: rgb(44, 207, 72);
+  z-index: 1;
+}
+.addinput__button:hover {
+  background-color: rgba(33, 226, 65, 0.452);
+  color: #ffffff;
+}
+.clear__all {
+  width: 100%;
+}
+.clear__all button {
+  font-size: 22px;
+  padding: 10px 10px;
+  border-radius: 6px;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.tasksDisplay__empty {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 100;
+  color: grey;
+  text-shadow: 3px 3px black;
+  opacity: 0.3;
+  z-index: -1;
 }
 .tasks__display {
-  margin-top: 50px;
+  width: 80%;
+  margin: auto;
+  font-family: "Yeon Sung", cursive;
+  background-color: #ffffff;
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(auto-fit, 320px);
   justify-content: center;
+  z-index: 1;
 }
 li[class^="class"] {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid red;
+  position: relative;
+  border: 2px solid black;
+  box-shadow: 5px 5px black;
+  border-radius: 50px;
+  width: 280px;
+  height: 320px;
+  margin: 20px;
+  animation: slide-down 3s ease;
+  color: rgb(51, 10, 236);
+}
+li[class$="0"],
+li[class$="8"] {
+  background-color: rgba(236, 163, 163, 0.288);
+  border-radius: 50px;
+}
+li[class$="1"],
+li[class$="9"] {
+  background-color: rgba(138, 223, 217, 0.377);
   border-radius: 10px;
-  width: 250px;
-  height: 300px;
-  margin: 30px;
+}
+li[class$="2"],
+li[class$="6"] {
+  background-color: rgba(231, 231, 166, 0.295);
+  border-radius: 40px;
+}
+li[class$="3"],
+li[class$="5"] {
+  background-color: rgba(141, 204, 146, 0.226);
+  border-radius: 60px;
+}
+li[class$="4"],
+li[class$="7"] {
+  background-color: rgba(207, 170, 224, 0.404);
+  border-radius: 80px;
 }
 li[class^="class"] h1 {
-  padding-top: 10px;
+  padding-top: 15px;
   width: 80%;
   margin: auto;
-  color: red;
+  font-size: 50px;
+  overflow: hidden;
 }
 li[class^="class"] p {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 12px;
+  padding-bottom: 10px;
   width: 80%;
   margin: auto;
-  color: red;
+  overflow: hidden;
+  font-size: 25px;
 }
-li[class^="class"] button {
-  padding: 8px 5px;
-  border-radius: 8px;
-  width: 50%;
-  margin: auto;
+li[class^="class"] :nth-child(3) {
+  position: absolute;
+  padding: 6px 5px;
+  border-radius: 6px;
+  width: 30%;
+  bottom: 10px;
+  left: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+li[class^="class"] :nth-child(3):hover {
+  background-color: rgba(38, 165, 59);
+  color: #ffffff;
+}
+li[class^="class"] :nth-child(4) {
+  position: absolute;
+  padding: 6px 5px;
+  border-radius: 6px;
+  width: 30%;
+  right: 50px;
+  bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+li[class^="class"] :nth-child(4):hover {
+  background-color: red;
+  color: #ffffff;
 }
 .removedElement {
   background-color: grey;
+  text-decoration-line: line-through;
+
   opacity: 0.5;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
